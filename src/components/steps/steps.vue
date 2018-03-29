@@ -17,12 +17,13 @@ export default {
       if(this.current<0 || this.current>this.$children.length){
         return;
       }
+
       this.$children.forEach((child, index)=>{
         if(index<this.current){
           child.currentStatus = true;
           child.stepCircle = 'normal';
           child.successOrfail = true;
-          index>0 ?this.$children[index-1].lineColors = 'normal':'';
+          index > 0 && (this.$children[index-1].lineColors = 'normal');
           child.num = '';
         } else {
           if(this.status == 'error' && this.current == index){
@@ -31,7 +32,7 @@ export default {
             child.num = '';
             child.stepCircle = 'error';
           } else {
-            child.lineColors = 'default';
+            index >0 && (this.$children[index-1].lineColors = 'default');
             child.num = index+1;
             child.stepCircle = 'default';
           }
@@ -41,7 +42,7 @@ export default {
     }
   },
   props:{
-    current:[ Number, String ],
+    current:[Number,String],
     status: String,
   },
   mounted:function(){

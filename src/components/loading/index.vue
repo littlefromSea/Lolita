@@ -66,13 +66,13 @@ export default {
       p:nth-child(1)
         padding 6px 0
         img
-          width 40px
-          height 40px
+          width 38px
+          height 38px
       p
         color #ffffff
         opacity .9
         padding 0 5px
         text-align center
-        font-size 14px
+        font-size 15px
         line-height 16px
 </style>
